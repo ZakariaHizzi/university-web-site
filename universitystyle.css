@@ -1,37 +1,40 @@
 * {
   margin: 0;
   padding: 0;
-  font-family: poppins, sans-serif;
+  font-family: "Lora", serif;
   scroll-behavior: smooth;
   box-sizing: border-box;
 }
+
 .header {
   width: 100%;
   min-height: 100vh;
-  background-image: linear-gradient(rgba(4, 9, 30, 0.4), rgba(4, 9, 30, 0.4)),
-    url(uni-img/university-campus.htm);
+
+  background-image:
+    linear-gradient(rgba(4, 9, 30, 0.4), rgba(4, 9, 30, 0.4)),
+    url("./uni-img/harvard-university-cambridge-usa.jpg");
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
-  position: relative;
 }
 nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 5px 20px;
-  position: relative;
-  z-index: 999;
+  padding: 0 20px;
   width: 100%;
+  position: fixed;
+  z-index: 100;
 }
 nav img {
-  width: 100px;
-  min-height: 100px;
+  width: 60px;
+  height: 60px;
   border-radius: 50%;
   transition: 1s;
 }
-nav img:hover {
-  transform: rotate(360deg);
+nav .fa-solid.fa-bars {
+  position: relative;
+  bottom: -10px;
 }
 .nav-link {
   flex: 1;
@@ -39,10 +42,8 @@ nav img:hover {
 }
 .nav-link ul li {
   display: inline-block;
-  padding: 10px 15px;
+  padding: 0 15px;
   list-style: none;
-  position: relative;
-  margin-bottom: 15px;
 }
 .nav-link ul li a {
   text-decoration: none;
@@ -55,7 +56,7 @@ nav img:hover {
   height: 2px;
   margin: auto;
   display: block;
-  background: rgb(124, 15, 15);
+  background: white;
   transition: 0.7s;
 }
 .nav-link ul li:hover::after {
@@ -63,25 +64,24 @@ nav img:hover {
 }
 
 .text {
-  position: absolute;
-  width: 90%;
-  text-align: center;
+  display: flex;
   flex-direction: column;
-  transform: translate(-50%, -50%);
-  left: 50%;
-  top: 50%;
+  justify-content: center;
+  align-items: center;
   color: white;
-  display: block;
+  height: 90vh;
 }
 .text h1 {
   text-align: center;
-  font-size: 60px;
+  font-size: 48px;
   font-weight: 600;
   text-transform: uppercase;
 }
 .text p {
+  text-align: center;
   font-size: 20px;
   margin: 40px 0;
+  width: 80%;
 }
 
 .btn {
@@ -94,9 +94,9 @@ nav img:hover {
   border-bottom: 1px solid white;
 }
 .btn:hover {
-  background: rgb(124, 15, 15);
+  background: #3698f4;
   transition: 0.7s;
-  border: rgb(124, 15, 15);
+  border: #3698f4;
 }
 nav .fa-solid {
   display: none;
@@ -111,13 +111,18 @@ nav .fa-solid {
   text-align: center;
 }
 .courses h1 {
-  font-size: 40px;
-  font-weight: 200;
+  font-size: 24px;
+  color: #3698f4;
+  font-weight: 800;
+}
+.courses h6 {
+  font-size: 30px;
+  color: black;
+  margin-top: 15px;
+  font-weight: bold;
 }
 .courses p {
-  font-size: 16px;
   color: #777;
-  margin-top: 15px;
 }
 .row {
   display: flex;
@@ -131,7 +136,7 @@ nav .fa-solid {
 }
 .column {
   flex-basis: 31%;
-  background: rgb(124, 15, 15);
+  background: #3698f4;
   border-radius: 20px;
   padding: 30px 15px;
   margin-bottom: 15px;
@@ -163,11 +168,16 @@ img {
   flex-direction: column;
 }
 .feature h1 {
-  font-size: 40px;
-  font-weight: 200;
+  font-size: 24px;
+  color: #3698f4;
+  font-weight: 800;
 }
 .feature p {
-  font-size: 16px;
+  font-size: 30px;
+  color: black;
+  font-weight: bold;
+}
+.feature h6 {
   color: #777;
 }
 .feature-img {
@@ -193,49 +203,66 @@ img {
   text-align: center;
 }
 .students h1 {
-  font-size: 40px;
-  font-weight: 200;
+  font-size: 24px;
+  font-weight: 900;
+  color: #3698f4;
 }
 .students p {
   font-size: 16;
   color: #777;
 }
+.students h6 {
+  font-size: 30px;
+  color: black;
+  font-weight: bold;
+}
 .review {
   flex-basis: 44%;
   display: flex;
-  padding: 25px;
+  flex-direction: column;
+  padding: 15px;
   position: relative;
   text-align: left;
   width: 90%;
-  background: rgb(124, 15, 15);
   border-radius: 20px;
   margin: 15px;
   transition: 0.3s;
+  box-shadow: 5px 5px 10px #9494943e;
 }
 .review:hover {
   scale: 1.05;
 }
+.review .name {
+  display: flex;
+  align-items: center;
+  margin: 15px 0;
+}
 .review img {
-  height: 40px;
-  width: 30px;
-  margin-left: 10px;
-  margin-right: 30px;
+  height: 50px;
+  width: 50px;
+  margin: 5px;
   border-radius: 50%;
+  border: 2px solid #3698f4;
+}
+.review h6 {
+  font-size: 30px;
+  font-weight: bold;
 }
 .review p {
-  font-size: 13px;
-  font-weight: 400;
+  color: #777;
+  margin: 5px 0;
 }
 .review .fa {
   color: #3698f4;
 }
 .review h3 {
-  color: white;
+  color: #3698f4;
 }
 .about-header {
-  width: 100%;
+  width: 100vw;
   min-height: 50vh;
-  background-image: linear-gradient(rgba(4, 9, 30, 0.4), rgba(4, 9, 30, 0.4)),
+  background-image:
+    linear-gradient(rgba(4, 9, 30, 0.4), rgba(4, 9, 30, 0.4)),
     url(uni-img/graduate.jpg);
   background-position: center;
   background-size: cover;
@@ -256,7 +283,7 @@ img {
 #aboutus h1 {
   text-align: center;
   font-size: 40px;
-  font-weight: 200;
+  font-weight: bold;
   margin-top: 50px;
 }
 #aboutus h2 {
@@ -274,10 +301,8 @@ img {
   top: -15px;
 }
 .info-heading h1 {
-  font-size: 35px;
-  padding-top: 0;
-  position: relative;
-  bottom: 40px;
+  font-size: 24px !important;
+  color: #3698f4;
 }
 .info-heading p {
   color: #777;
@@ -286,16 +311,30 @@ img {
   position: relative;
 }
 .info-heading a {
-  border: 1px solid rgb(124, 15, 15);
-  color: rgb(124, 15, 15);
+  border: 1px solid#3698f4;
+  color: #3698f4;
 }
 .info a:hover {
   color: white;
+}
+#contact .us {
+  text-align: center;
+}
+#contact .us h1 {
+  font-size: 24px;
+  color: #3698f4;
+  font-weight: 900;
+}
+#contact .us p {
+  font-size: 30px;
+  color: black;
+  font-weight: bold;
 }
 .comment-blogs {
   border: 1px solid #777;
   margin-bottom: 100px;
   padding: 20px;
+  width: 60%;
 }
 .comment input,
 .comment textarea {
@@ -311,24 +350,35 @@ img {
   margin-bottom: 20px;
 }
 .comment .btn {
-  color: rgb(124, 15, 15);
-  border: 1px solid rgb(124, 15, 15);
+  color: #3698f4;
+  border: 1px solid#3698f4;
   background: transparent;
   cursor: pointer;
   transition: 0.3s;
 }
 .comment .btn:hover {
-  background-color: rgb(124, 15, 15);
+  background-color: #3698f4;
   color: white;
 }
 .contactus2 {
   width: 80%;
   display: flex;
   margin: auto;
-  text-align: center;
+  justify-content: center;
+}
+.contactus2 .details {
+  width: 50%;
+  text-align: left;
+}
+.contactus2 .details i {
+  color: #3698f4;
+}
+.contactus2 .details h5 {
+  display: inline;
+  color: #3698f4;
 }
 .contactus2 .information {
-  flex-basis: 60%;
+  flex-basis: 80%;
   text-align: center;
 }
 .contact-icon i {
@@ -354,91 +404,66 @@ img {
 .contactus2 .comment-blogs {
   border: none;
 }
-
+.contactus2 .comment-blogs h3 {
+  font-weight: 400;
+}
 .contactus2 .row {
-  align-items: center;
+  display: flex;
+  align-items: flex-start;
   justify-content: center;
   width: 100%;
   position: relative;
   top: 60px;
 }
 footer {
-  background-color: #16162b;
-  display: flex;
-  justify-content: space-around;
+  width: 90vw;
+  border-top: 1px solid #777;
+  margin: auto;
   padding: 20px 0;
 }
-footer .about_info h1 {
-  color: white;
-  font-size: 22px;
-  font-weight: bold;
-  margin: 10px 0;
-  text-align: left;
-}
-footer .about_info img {
-  width: 100px;
-  min-height: 100px;
-  border-radius: 50%;
-  margin: 0 10px;
-  transition: 1s;
-}
-footer .about_info i {
-  color: white;
-  margin-top: 10px;
-}
-footer .about_info h5 {
-  display: inline;
-  color: white;
-  margin: 3px 3px;
-}
-footer .about_info h3 {
-  color: white;
-  font-weight: bold;
-  margin-top: 10px;
-}
-footer .quick_links h1 {
-  color: white;
-  font-size: 22px;
-  font-weight: bold;
-  margin: 10px 0;
-}
-footer .quick_links ul li {
-  list-style: none;
-  margin: 5px 0;
-}
-Footer .quick_links ul li a {
-  transition: 0.5s;
-  text-decoration: none;
-  color: white;
-}
-footer .quick_links ul li a:hover {
-  border-bottom: 1px solid rgb(124, 15, 15);
-}
-footer .follow {
+footer .about_info {
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  color: #777;
 }
-footer .follow h3 {
-  color: white;
-  margin: 10px 0;
-  font-size: 22px;
-  font-weight: bolder;
+footer .about_info .links {
+  text-align: right;
+  width: 40%;
 }
-footer .follow a {
+footer .about_info a,
+footer .about_info p {
   text-decoration: none;
-  color: white;
+  color: #777;
+  font-size: 12px;
+  margin: 0 5px;
 }
-footer .follow i {
-  font-size: 20px;
-  margin: 5px 5px;
-  transition: 1s;
-  color: white;
+/* message style */
+.message {
+  display: flex;
+  text-align: center;
+  position: fixed;
+  bottom: 0;
+  right: -250px;
+  padding: 20px;
+  background-color: #3698f4;
+  border-radius: 30px;
+  margin-bottom: 20px;
+  margin-right: 10px;
+  transition: 1s all ease;
 }
-footer .follow i:hover {
-  transform: rotate(180deg);
+.message p {
+  font-weight: 600;
+  margin-right: 10px;
+  color: #e3e2dd;
 }
-footer .follow h5 {
-  display: inline;
+.message button {
+  border: none;
+  background-color: white;
+  padding: 10px;
+  border-radius: 50%;
+  color: #3698f4;
+  cursor: pointer;
 }
 /* Responsiveness */
 /* Medium Screen + Tablet */
@@ -495,47 +520,31 @@ footer .follow h5 {
     margin-bottom: 20px;
     border-radius: 20px;
   }
+  .contactus2 .row .details {
+    width: 100%;
+    margin: 20px 0;
+  }
 }
 @media (max-width: 900px) {
   .header {
     width: 100%;
   }
   .text h1 {
-    font-size: 25px;
+    font-size: 30px;
   }
-  .nav-link {
-    width: 200px;
-    height: 100vh;
-    display: block;
-    position: fixed;
-    background: rgb(124, 15, 15);
-    top: 0;
-    right: -200px;
-    z-index: 2;
-    text-align: left;
-    transition: 1s;
+  text p {
+    font-size: 16px;
   }
   .nav-link ul li {
-    display: block;
-    left: 10px;
-    top: 10px;
+    padding: 0 10px;
   }
-
-  nav .fa-solid {
-    display: block;
-    font-size: 30px;
-    margin: 10px;
-    color: white;
-    cursor: pointer;
-  }
-  .fa-bars {
-    position: relative;
-    bottom: 20px;
-    left: 5px;
+  .nav-link ul li a {
+    font-size: 12px;
   }
   .contactus2 {
     display: flex;
     flex-direction: column;
+    align-items: center;
   }
   .contactus2 .comment-blogs {
     width: 100vw;
@@ -546,10 +555,15 @@ footer .follow h5 {
 
   .contactus2 .row {
     width: 90%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
-  .contactus2 .row iframe {
+  .contactus2 .row .details {
     width: 100%;
+    margin: 20px 0;
   }
+
   .contactus2 .information {
     width: 100%;
   }
@@ -564,6 +578,49 @@ footer .follow h5 {
   }
 }
 @media (max-width: 700px) {
+  .nav-link {
+    width: 200px;
+    height: 450px;
+    display: block;
+    position: fixed;
+    background: #3698f4;
+    top: 0;
+    right: -700px;
+    width: 100vw;
+    height: 100vh;
+    z-index: 2;
+    text-align: left;
+    transition: 1s;
+  }
+  nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+  nav img {
+    width: 40px;
+    height: 40px;
+  }
+
+  .nav-link ul {
+    margin: 0px;
+  }
+  .nav-link ul li {
+    display: block;
+    text-align: center;
+    margin: 20px 0;
+    width: 100%;
+    background-color: #89c3fa;
+    border-radius: 15px;
+    padding: 10px 0;
+  }
+
+  nav .fa-solid {
+    display: block;
+    font-size: 22px;
+    color: white;
+    cursor: pointer;
+  }
   .info-heading {
     text-align: center;
   }
@@ -579,23 +636,16 @@ footer .follow h5 {
   .info .row a {
     margin-bottom: 10px;
   }
-  footer {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
-  footer .about_info {
-    width: 70%;
-  }
-  footer .follow {
-    width: 70%;
-  }
-  footer .quick_links {
-    width: 70%;
+  footer .about_info a,
+  footer .about_info p {
+    font-size: 10px;
   }
 }
-@media (max-width: 550px) {
+@media (max-width: 560px) {
+  footer .about_info a,
+  footer .about_info p {
+    font-size: 6px;
+  }
   .header {
     width: 100%;
   }
@@ -611,9 +661,7 @@ footer .follow h5 {
   .courses p {
     font-size: 12px;
   }
-  .feature p {
-    font-size: 12px;
-  }
+
   .students p {
     font-size: 12px;
   }
